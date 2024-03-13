@@ -8,7 +8,12 @@ export const MyDatabaseMetod = {
     users.push(user);
   },
 
-  //Criar um método para remover o usuário.
+  drop(user: User): void {
+    const pos = users.indexOf(user);
+    if (pos > -1) {
+      users.splice(pos,1);
+    }
+  },
 
   show(): void {
     for (const user of users) {

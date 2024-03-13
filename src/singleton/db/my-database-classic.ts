@@ -19,7 +19,12 @@ export class MyDatabaseClassic {
     this.users.push(user);
   }
 
-  // Criar um método para remover usuário.
+  drop(user: User): void {
+    const pos = this.users.indexOf(user);
+    if (pos > -1) {
+      this.users.splice(pos,1);
+    }
+  }
 
   show(): void {
     for (const user of this.users) {

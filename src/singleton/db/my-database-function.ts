@@ -9,7 +9,12 @@ export const MyDatabaseFunctionfunction = function () {
       users.push(user);
     },
 
-    //Criar a função para deletar um usuário
+    drop(user: User): void {
+      const pos = users.indexOf(user);
+      if (pos > -1) {
+        users.splice(pos,1);
+      }
+    },
 
     show(): void {
       for (const user of users) {
