@@ -19,11 +19,8 @@ export class MyDatabaseClassic {
     this.users.push(user);
   }
 
-  drop(user: User): void {
-    const pos = this.users.indexOf(user);
-    if (pos > -1) {
-      this.users.splice(pos,1);
-    }
+  remove(pos: number): void {
+    this.users.splice(pos,1)
   }
 
   show(): void {

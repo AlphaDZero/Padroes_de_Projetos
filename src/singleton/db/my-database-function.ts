@@ -9,11 +9,8 @@ export const MyDatabaseFunctionfunction = function () {
       users.push(user);
     },
 
-    drop(user: User): void {
-      const pos = users.indexOf(user);
-      if (pos > -1) {
-        users.splice(pos,1);
-      }
+    remove(pos: number): void {
+      users.splice(pos,1)
     },
 
     show(): void {
